@@ -1,89 +1,165 @@
-%\documentclass[11pt, addpoints, tikz]{exam}
+\documentclass[11pt,addpoints,tikz]{exam}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, color,
-  comment, graphicx, environ, xspace}
+\usepackage{amsmath,amssymb,amsfonts,enumitem,graphicx,xcolor}
 \usepackage{tikz}
-\usetikzlibrary{arrows,decorations.pathmorphing,decorations.markings,calc,patterns,
-  fadings}	
-\usepackage{tkz-tab}
-\usepackage{tkz-base}
-\usepackage{tkz-euclide}
-\usepackage{multicol}					%multiple colums
-\usepackage{pgfplots}
-\usepgfplotslibrary{fillbetween}
-\usepackage{multirow,array} %Used for the "hand-made" payoff matrix
-\usepackage{hhline}
-\usepackage{float}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{multicol}
 \usepackage{draftwatermark}
-\usepackage{fontawesome5}
-\usepackage{tikzsymbols}
 \usepackage{eso-pic}
-\usepackage{polynom}
-\newcommand\BackgroundPic{
-\put(0,0){
+
+\newcommand\BackgroundPic{%
+\put(0,0){%
 \parbox[b][\paperheight]{\paperwidth}{%
 \vfill
 \centering
-\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Logo.png}% 
-\vfill
-}}}
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Logo.png}%
+\vfill}}}
 
-%\printanswers %comment out to not print answers
+% Uncomment the next line to produce the instructor key.
+% \printanswers
 
-%Format Header and footer
 \pagestyle{headandfoot}
-\header{\textbf{Student Name:}}{\LARGE\textbf{Ch2 Quiz}}{PreCalculus}
-\firstpageheader{\textbf{Student Name:}\\\textbf{Student Number:}\\\textbf{Period:}}{\LARGE\textbf{Ch2 Quiz}}{
-  PreCalculus \\\hspace*{2cm}Mr. Angerhofer\\
+\header{\textbf{Student Name:}}{\LARGE\textbf{Calculus I Exam}}{Limits, Derivatives, and Integrals}
+\firstpageheader{\textbf{Student Name:}\\\textbf{Student Number:}\\\textbf{Period:}}{\LARGE\textbf{Calculus I Exam}}{%
+  Limits, Derivatives, and Integrals\\\hspace*{1cm}Mr. Angerhofer\\
   \textbf{Date:\hspace*{15mm}}}
 \headrule
 \footrule
+\footer{}{Page \thepage\ of \numpages}{}
 \setlength{\columnsep}{1cm}
-%\setlength{\columnseprule}{1pt}
-\footer{}{Page \thepage}{}
-%\extrafootheight{-2cm}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\enspace}
 
 \begin{document}
-
-\AddToShipoutPicture{\BackgroundPic} % Add ACS Watermark
+\AddToShipoutPicture{\BackgroundPic}
 
 \ifprintanswers
   \begin{center}
-    \textcolor{red}{\Huge \textbf{SOLUTIONS GUIDE}}
-    \end{center}
-  \else
-    \begin{center}
-      \fbox{\fbox{\parbox{5.5in}{\centering
-            \begin{enumerate}
-              \item Answer the questions in the spaces provided. If you run out of room
-                  for an answer raise your hand and ask for a sheet of scratch paper.
-              \item This Exam is \textbf{closed} calculator, \textbf{open} math journal. Work MUST be shown for partial credit, and is required when asked for.
-              \item If you have a question, raise your hand and wait for the
-                    teacher.
-              \item You have 30 minutes to complete this Quiz
-            \end{enumerate}
-          }}}
-    \end{center}
+    \textcolor{red}{\Huge\textbf{SOLUTIONS GUIDE}}
+  \end{center}
+\else
   \begin{center}
-  %  \gradetable[h][questions]
-  {\LARGE\textbf{No Calculator Portion}}
+    \fbox{\fbox{\parbox{5.8in}{\centering
+      \begin{enumerate}[leftmargin=*,itemsep=2pt]
+        \item Answer the questions in the spaces provided. If you run out of room, ask for scratch paper.
+        \item Work must be shown for partial credit and is required when a question asks for an explanation.
+        \item The exam has a 30-minute no-calculator portion followed by a 30-minute calculator portion.
+        \item You may use your math journal. If you have a question, raise your hand and wait for the teacher.
+      \end{enumerate}
+    }}}
   \end{center}
 \fi
 
-%\setlength{\multicolsep}{1.5cm}
-
-      \setlength{\tabcolsep}{1em} % for the horizontal padding
-      {\renewcommand{\arraystretch}{1.5}% for the vertical padding
-
+\begin{center}
+  \textbf{Total: 50 points \hspace{1cm} Time: 60 minutes}
+\end{center}
 
 \begin{questions}
-  
-\newpage
+
+\section*{Part I: No Calculator \hfill 30 minutes \hspace{1em} 30 points}
+
+\question[3] Use the table to evaluate the limit. Explain briefly how the table supports your answer.
+\[
+\begin{array}{c|ccccc}
+x&1.9&1.99&2&2.01&2.1\\ \hline
+f(x)&3.91&3.991&\text{undefined}&4.009&4.09
+\end{array}
+\qquad
+\lim_{x\to 2}f(x)=\underline{\hspace{1.2in}}
+\]
+
+\question[5] Let
+\[
+f(x)=
+\begin{cases}
+x^2-4, & x\leq 2,\\
+3x-6, & x>2.
+\end{cases}
+\]
+\begin{parts}
+\part Find \(\displaystyle\lim_{x\to2^-}f(x)\) and \(\displaystyle\lim_{x\to2^+}f(x)\).
+\part Is \(f\) continuous at \(x=2\)? Use the definition of continuity to justify your answer.
+\end{parts}
+
+\question[3] Suppose \(\displaystyle\lim_{x\to c}f(x)=5\) and
+\(\displaystyle\lim_{x\to c}g(x)=-2\). Find each limit.
+\begin{parts}
+\part \(\displaystyle\lim_{x\to c}[2f(x)-3g(x)]\)
+\part \(\displaystyle\lim_{x\to c}\frac{g(x)}{f(x)}\)
+\part \(\displaystyle\lim_{x\to c}[f(x)g(x)]\)
+\end{parts}
+
+\question[4] Find each limit algebraically, if it exists.
+\begin{parts}
+\part \(\displaystyle\lim_{x\to4}\frac{x^2-16}{x-4}\)
+\part \(\displaystyle\lim_{x\to\infty}\frac{6x^2-x+1}{2x^2+5}\)
+\end{parts}
+
+\question[4] The velocity \(v(t)\), in feet per second, of a car is represented by the graph below.
 \begin{center}
-{\LARGE\textbf{Calculator Portion}}
+\begin{tikzpicture}[x=0.075cm,y=0.055cm]
+  \draw[->] (0,0)--(82,0) node[right] {$t$ (s)};
+  \draw[->] (0,-20)--(0,115) node[above] {$v(t)$};
+  \draw[step=10,gray!25] (0,-20) grid (80,110);
+  \draw[thick] (0,10)--(20,50)--(40,90)--(60,30)--(80,0);
+  \foreach \x in {0,20,40,60,80} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {0,30,60,90} \node[left] at (0,\y) {\small \y};
+\end{tikzpicture}
 \end{center}
+\begin{parts}
+\part Estimate the instantaneous rate of change of \(v\) at \(t=60\) by drawing a tangent line and using a difference quotient.
+\part What does the rate of change in part (a) represent in this context?
+\part Estimate the distance traveled from \(t=20\) to \(t=60\) by counting geometric areas.
+\end{parts}
+
+\question[4] Use the Trapezoid Rule with four equal subintervals to estimate
+\(\displaystyle\int_0^8(2x+1)\,dx\). Write the trapezoidal sum before simplifying.
+
+\question[7] For \(s(t)=-t^2+12t+5\), find the average velocity on the interval
+\([2,2.1]\). Then state the instantaneous velocity at \(t=2\) by taking the appropriate limit.
+
+\newpage
+\section*{Part II: Calculator Allowed \hfill 30 minutes \hspace{1em} 20 points}
+
+\question[4] A particle moves along a line with position
+\[
+s(t)=0.4t^3-3t^2+8t+2
+\]
+for \(0\leq t\leq 6\), where \(s\) is measured in meters and \(t\) in seconds.
+\begin{parts}
+\part Find the particle's average velocity on \(2\leq t\leq5\).
+\part Use the calculator to find the instantaneous velocity at \(t=3\), and interpret its sign.
+\end{parts}
+
+\question[4] The graph of \(f\) is modeled by
+\[
+f(x)=\frac{x^2-5x+6}{x-2}.
+\]
+\begin{parts}
+\part Use algebra to identify any removable discontinuity.
+\part Use a graphing calculator to display the graph near the discontinuity and state the value of \(\displaystyle\lim_{x\to2}f(x)\).
+\part Find the horizontal asymptote, if one exists.
+\end{parts}
+
+\question[4] Find \(a\) and \(b\) so that the function is continuous for all real \(x\):
+\[
+f(x)=
+\begin{cases}
+2x+a, & x<-1,\\
+ax+b, & -1\leq x\leq3,\\
+4x-b, & x>3.
+\end{cases}
+\]
+Show the two equations you use and solve the resulting system.
+
+\question[4] Verify that the Intermediate Value Theorem applies to
+\(p(x)=x^3-4x+1\) on \([0,2]\). Use a calculator to locate one value of \(c\) in \((0,2)\) for which \(p(c)=0\), rounded to three decimal places.
+
+\question[4] The rate of change of water depth in a tank is modeled by
+\[
+r(t)=\frac{18}{t+2}+0.5t
+\]
+liters per minute for \(0\leq t\leq10\). Use a calculator and the Trapezoid Rule with five equal subintervals to estimate the total change in the amount of water during the first ten minutes. Is the estimate an overestimate or an underestimate? Explain using the shape of the graph.
 
 \end{questions}
 \end{document}
-
