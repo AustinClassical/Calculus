@@ -1,0 +1,89 @@
+%\documentclass[11pt, addpoints, tikz]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, color,
+  comment, graphicx, environ, xspace}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,decorations.markings,calc,patterns,
+  fadings}	
+\usepackage{tkz-tab}
+\usepackage{tkz-base}
+\usepackage{tkz-euclide}
+\usepackage{multicol}					%multiple colums
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{multirow,array} %Used for the "hand-made" payoff matrix
+\usepackage{hhline}
+\usepackage{float}
+\usepackage{draftwatermark}
+\usepackage{fontawesome5}
+\usepackage{tikzsymbols}
+\usepackage{eso-pic}
+\usepackage{polynom}
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Logo.png}% 
+\vfill
+}}}
+
+%\printanswers %comment out to not print answers
+
+%Format Header and footer
+\pagestyle{headandfoot}
+\header{\textbf{Student Name:}}{\LARGE\textbf{Ch2 Quiz}}{PreCalculus}
+\firstpageheader{\textbf{Student Name:}\\\textbf{Student Number:}\\\textbf{Period:}}{\LARGE\textbf{Ch2 Quiz}}{
+  PreCalculus \\\hspace*{2cm}Mr. Angerhofer\\
+  \textbf{Date:\hspace*{15mm}}}
+\headrule
+\footrule
+\setlength{\columnsep}{1cm}
+%\setlength{\columnseprule}{1pt}
+\footer{}{Page \thepage}{}
+%\extrafootheight{-2cm}
+
+\begin{document}
+
+\AddToShipoutPicture{\BackgroundPic} % Add ACS Watermark
+
+\ifprintanswers
+  \begin{center}
+    \textcolor{red}{\Huge \textbf{SOLUTIONS GUIDE}}
+    \end{center}
+  \else
+    \begin{center}
+      \fbox{\fbox{\parbox{5.5in}{\centering
+            \begin{enumerate}
+              \item Answer the questions in the spaces provided. If you run out of room
+                  for an answer raise your hand and ask for a sheet of scratch paper.
+              \item This Exam is \textbf{closed} calculator, \textbf{open} math journal. Work MUST be shown for partial credit, and is required when asked for.
+              \item If you have a question, raise your hand and wait for the
+                    teacher.
+              \item You have 30 minutes to complete this Quiz
+            \end{enumerate}
+          }}}
+    \end{center}
+  \begin{center}
+  %  \gradetable[h][questions]
+  {\LARGE\textbf{No Calculator Portion}}
+  \end{center}
+\fi
+
+%\setlength{\multicolsep}{1.5cm}
+
+      \setlength{\tabcolsep}{1em} % for the horizontal padding
+      {\renewcommand{\arraystretch}{1.5}% for the vertical padding
+
+
+\begin{questions}
+  
+\newpage
+\begin{center}
+{\LARGE\textbf{Calculator Portion}}
+\end{center}
+
+\end{questions}
+\end{document}
+
